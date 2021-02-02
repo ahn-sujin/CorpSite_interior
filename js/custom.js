@@ -5,14 +5,68 @@ $(function(){
         win_w = $(this).width();
     });
 
-/*----------visual-------------------------------------------------------*/
+/*----------scroll motion-------------------------------------------------------*/
+    var last = 0;
+    var sec_pos = [];
+    var base_line = -500;
+
+    $('section').each(function(){
+        var this_offset = $(this).offset().top;
+        sec_pos.push(this_offset);
+    });
+
+    last = $('section').last().offset().top + $('section').last().height();
+    sec_pos.push(last);
+
+    $(window).on('scroll',function(){
+        var scroll = $(this).scrollTop();
+
+        $('section').each(function(index){
+            if(scroll >= sec_pos[index] + base_line && scroll < sec_pos[index+1]){
+                $('section').eq(index).addClass('on');
+            }   
+        });
+    });
+
+/*----------gnb-------------------------------------------------------*/
+    if(win_w > 980){
+        $('.sub_wrap').removeAttr('style');
+        $('.sub_menu_depth').removeAttr('style');
+    }
+
+
     $('#gnb>li').on('mouseenter',function(){
-        $(this).children('.sub_wrap').stop(true,true).slideDown();
+        if(win_w > 980){
+            $(this).children('.sub_wrap').stop(true,true).slideDown();
+        } else{
+            $('#gnb>li>a').off('click');
+            $('#gnb>li>a').on('click',function(){
+                $('sub_wrap').stop().slideUp();
+                $(this).next('.sub_wrap').stop().slideToggle();
+            });
+            $('.sub_menu>li>a').off('click');
+            $('.sub_menu>li>a').on('click',function(){
+                $('.sub_menu_depth').stop().slideUp();
+                $(this).next('.sub_menu_depth').stop().slideToggle();
+            });
+        }   
+        
     });
 
     $('#gnb>li').on('mouseleave',function(){
-        $(this).children('.sub_wrap').stop(true,true).slideUp();
+        if(win_w > 980){
+            $(this).children('.sub_wrap').stop(true,true).slideUp();
+        }
+        
     });
+
+    $('.more').on('click',function(){
+        $('.nav_wrap, .more , .cancle').addClass('on');
+    });
+    $('.cancle').on('click',function(){
+        $('.nav_wrap, .more , .cancle').removeClass('on');
+    });
+
 
 /*----------visual-------------------------------------------------------*/
     var mySwiper = new Swiper('#visual .swiper-container', {
@@ -27,7 +81,6 @@ $(function(){
         },
 
     });
-
 /*----------char-------------------------------------------------------*/
     $("#char .box , #service .box ").on('mouseenter',function(){
         $(".cardRotate").addClass("backRotate").removeClass("cardRotate");
