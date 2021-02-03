@@ -101,10 +101,11 @@ $(function(){
 
 /*----------review-------------------------------------------------------*/        
     var swiper = new Swiper('#review .swiper-container', {
-        slidesPerView: 5,
+        slidesPerView: 1,
         spaceBetween: 0,
         slidesPerGroup: 1,
         loop: true,
+
         pagination: {
         el: '.swiper-pagination',
         clickable: true,
@@ -113,6 +114,35 @@ $(function(){
         autoplay: {
             delay: 2000,
         },
+
+        breakpoints: {
+
+            640: {
+            slidesPerView: 2,
+            spaceBetween: 0,
+            slidesPerGroup: 1,
+            },
+
+            768: {
+            slidesPerView: 3,
+            spaceBetween: 0,
+            slidesPerGroup: 1,
+            },
+
+            980: {
+            slidesPerView: 3,
+            spaceBetween: 0,
+            slidesPerGroup: 1,
+            },
+
+            1200: {
+            slidesPerView: 5,
+            spaceBetween: 0,
+            slidesPerGroup: 1,
+            },
+        }
+
+
 
     });
 
