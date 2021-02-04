@@ -20,12 +20,21 @@ $(function(){
 
     $(window).on('scroll',function(){
         var scroll = $(this).scrollTop();
+        var page = $('.page_start');
+        var pageOffsetTop = page.offset().top;
 
         $('section').each(function(index){
             if(scroll >= sec_pos[index] + base_line && scroll < sec_pos[index+1]){
                 $('section').eq(index).addClass('on');
             }   
         });
+
+        if($(window).scrollTop() >= pageOffsetTop ){
+            $('header , #gnb').addClass('on');
+        }else{
+            $('header , #gnb').removeClass('on');
+        }
+
     });
 
 /*----------gnb-------------------------------------------------------*/
