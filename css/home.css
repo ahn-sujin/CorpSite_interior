@@ -28,6 +28,9 @@
 #visual .swiper-button-prev:after{content:''; width:100px; height:100px;  background:no-repeat center url('../img/slide_l.png');}
 #visual .swiper-button-next:after{content:''; width:100px; height:100px;  background:no-repeat center url('../img/slide_r.png');}
 
+@media screen and (max-width:980px){
+    #visual{margin-top:60px;}
+}
 
 @media screen and (max-width:768px){
     #visual{height:850px;}
@@ -53,7 +56,7 @@
 }
 
 @media screen and (max-width:480px){
-    #visual{height:700px;}
+    #visual{height:700px; margin-top:50px;}
 }
 
 

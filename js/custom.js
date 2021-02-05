@@ -5,6 +5,10 @@ $(function(){
         win_w = $(this).width();
     });
 
+    $('a[href="#"]').click(function(e) {
+        e.preventDefault();
+    });
+
 /*----------scroll motion-------------------------------------------------------*/
     var last = 0;
     var sec_pos = [];

@@ -9,6 +9,7 @@
 #menu_bar .depth_02::before{content:'\f105'; font-family: 'Font Awesome 5 Free'; font-weight: 900; margin:0 8px;}
 
 @media screen and (max-width:1200px){
+    #menu_bar .inner{width:100%;}
     #menu_bar{padding: 0 40px;}
 }
 
@@ -17,12 +18,8 @@
     #menu_bar .menu{line-height: 50px;}
 }
 
-@media screen and (max-width:768px){
-    #menu_bar{padding: 0 20px;}
-}
-
 @media screen and (max-width:480px){
-    #menu_bar{height:40px; margin-top: 50px;}
+    #menu_bar{height:40px; padding:0 20px; margin-top: 50px;}
     #menu_bar .menu{font-size:12px; line-height: 40px;}
 }
 
