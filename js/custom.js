@@ -94,13 +94,13 @@ $(function(){
         },
 
     });
-/*----------char-------------------------------------------------------*/
-    $("#char .box , #service .box ").on('mouseenter',function(){
+/*----------CardRotate-------------------------------------------------------*/
+    $("#char .box , #service .box, #service_detail .right .box ").on('mouseenter',function(){
         $(".cardRotate").addClass("backRotate").removeClass("cardRotate");
         $(this).addClass("cardRotate").removeClass("backRotate");
     });
 
-    $("#char .box , #service .box  ").on('mouseleave',function(){
+    $("#char .box , #service .box , #service_detail .right .box ").on('mouseleave',function(){
         $(this).addClass("backRotate").removeClass("cardRotate");
     });
 
@@ -165,6 +165,17 @@ $(function(){
     $('#review .swiper-slide .down').on('mouseleave',function(){
         $(this).removeClass("on");
     });
+
+/*---------tab_menu------------------------------------------------------*/
+    $('#service_detail .tab_menu .menu>li').on('click',function(){
+        var i = $(this).index();
+
+        $(this).addClass('on').siblings().removeClass('on');
+        $('#service_detail .tab_menu .tab_pannel').addClass('on');
+        $('#service_detail .tab_menu .tab_pannel>li').eq(i).fadeIn().siblings().fadeOut();
+    });
+
+    $('#service_detail .tab_menu .menu>li').first().trigger('click');
 
 
 
