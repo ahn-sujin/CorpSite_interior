@@ -41,10 +41,6 @@ button{border: none; background: transparent; outline: none;}
 #header.on .nav_wrap .btn{background:#fff;}
 #header.on .nav_wrap .btn>a{color: #c80a1e;}
 
-#gnb.on>li>a{ color: #fff; }
-#gnb.on>li:hover>a{color:#fff;}
-
-
 @media screen and (max-width:1200px){
     #header .inner{width:100%; padding: 0 40px;}
     #header .nav_wrap .btn{left:90%;}
@@ -66,7 +62,7 @@ button{border: none; background: transparent; outline: none;}
 
     #header .nav_wrap{
         position: fixed; top:60px; right:0; padding-top:60px; width:300px; height:100%; background: #f0f0f0; z-index: 2;
-        opacity:0; transform: translateX(200px); transition: 0.5s;
+        opacity:0; transform: translateX(2000px); transition: 0.5s;
     }
     #header .nav_wrap.on{opacity:1; transform: translateX(0px);}
 
