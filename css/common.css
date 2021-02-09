@@ -40,6 +40,7 @@ button{border: none; background: transparent; outline: none;}
 #header.on .logo>a{color: #fff;}
 #header.on .nav_wrap .btn{background:#fff;}
 #header.on .nav_wrap .btn>a{color: #c80a1e;}
+#gnb.on>li>a{color: #fff;}
 
 @media screen and (max-width:1200px){
     #header .inner{width:100%; padding: 0 40px;}
@@ -89,6 +90,8 @@ button{border: none; background: transparent; outline: none;}
     #gnb>li .sub_menu_depth{display: none; background: #c80a1e;}
     #gnb>li .sub_menu_depth>li>a{color: #fff; margin-bottom: 0px; padding: 20px 0 20px 80px;}
     #gnb>li .sub_menu_depth>li:hover>a{color: #fff;}
+
+    #gnb.on>li>a{color: #444;}
 
 } 
 
